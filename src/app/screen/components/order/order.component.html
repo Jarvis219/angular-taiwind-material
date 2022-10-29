@@ -1,0 +1,193 @@
+<section class="lg:mx-28 bg-gray-50 shadow p-4">
+  <div class="flex justify-between">
+    <h2 class="font-semibold text-slate-900">Địa chỉ nhận hàng</h2>
+    <span class="uppercase">ID Đơn hàng: {{order?.['code-orderDetail']}}</span>
+  </div>
+  <div class="grid md:grid-cols-3 font-mono">
+    <div class="col-span-1 mb-4 md:mr-5 md:mb-0">
+      <div class="flex flex-col">
+        <span
+          class="text-base text-gray-900 leading-8"
+          >{{order?.['customer-name']}}</span
+        >
+        <span
+          class="text-xs leading-6 text-gray-700"
+          >{{order?.['customer-phone']}}</span
+        >
+        <span
+          class="text-xs leading-5 text-gray-700"
+          >{{order?.['customer-address']}}</span
+        >
+        <span class="mt-3 text-xs italic leading-5 text-gray-900"
+          >({{order?.['notes']}})</span
+        >
+      </div>
+    </div>
+    <div class="md:border-l border-gray-300 col-span-2">
+      <nav class="flex md:ml-5">
+        <ul class="flex flex-col">
+          <li
+            *ngFor="let item of order?.['status-detail']; let index = index"
+            class="flex items-start gap-3"
+          >
+            <div class="flex flex-col items-center">
+              <div
+                class="{{
+                  'relative w-3 h-3 flex items-center justify-center rounded-full transition ease-in-out duration-150 ' +
+                    (index === 0 ? 'bg-blue-400' : 'bg-gray-400')
+                }}"
+              >
+                <span
+                  *ngIf="index === 0"
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+                ></span>
+              </div>
+              <div
+                *ngIf="index<((order?.['status-detail']?.length) || 0)-1"
+                class="{{
+                  'h-6 w-0.5 ' + (index === 0 ? 'bg-blue-400' : 'bg-gray-400')
+                }}"
+              ></div>
+            </div>
+            <div class="text-xs -mt-0.5 whitespace-normal">
+              <span class="text-gray-800">{{
+                item.date | transformDate: item.date
+              }}</span>
+              <span class="text-gray-600 ml-3">
+                {{ item.message }}
+              </span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="flex justify-end mt-8">
+    <button
+      (click)="displayDialog = true"
+      class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center"
+    >
+      Liên hệ
+    </button>
+    <button
+      (click)="displayBoxChat = true"
+      class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center mx-2"
+    >
+      Chat nhanh
+    </button>
+    <button
+      class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center"
+    >
+      {{ titleButton }}
+    </button>
+  </div>
+  <article
+    *ngFor="let item of order?.['products']"
+    class="flex items-start space-x-6 p-3 my-6 border-t border-gray-300"
+  >
+    <img
+      [src]="item.image"
+      [alt]="item.name"
+      class="flex-none rounded-md bg-slate-100 h-16 w-16 md:w-32 md:h-32 object-cover"
+    />
+    <div class="relative min-w-0 flex-auto">
+      <div class="flex items-center justify-between">
+        <h2
+          class="truncate !mb-0 md:!mb-3 text-sm md:pr-20 md:text-base text-slate-900 cursor-pointer"
+        >
+          {{ item.name }}
+        </h2>
+      </div>
+      <dl class="md:mt-2 text-sm font-medium leading-6">
+        <div class="flex items-center justify-between">
+          <p class="!mb-0 md:!mb-3">
+            Danh mục: <span>{{ item.category }}</span>
+          </p>
+        </div>
+        <div class="sm:flex items-center justify-between">
+          <p class="!mb-0">
+            Số lượng: <span class="ml-2">{{ item.quantity }}</span>
+            <span class="ml-2">x</span>
+            <span class="ml-2 text-[#ee4d48]">{{
+              item.price | currency: "VND":true
+            }}</span>
+          </p>
+          <div class="space-x-2 text-base">
+            Giá tiền:
+            <span class="text-[#ee4d48]">{{
+              item.price * item.quantity | currency: "VND":true
+            }}</span>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </article>
+  <div class="grid grid-cols-2 md:grid-cols-4 border-y border-gray-300">
+    <span
+      class="md:col-start-3 text-base leading-6 text-gray-700 text-right border-r border-gray-300 p-3"
+      >Tổng tiền hàng</span
+    >
+    <span
+      class="md:col-start-4 text-base leading-6 text-gray-700 text-right p-3"
+      >{{ order?.total | currency: "VND":true }}</span
+    >
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 border-b border-gray-300">
+    <span
+      class="md:col-start-3 text-base leading-6 text-gray-700 text-right border-r border-gray-300 p-3"
+      >Phí vận chuyển</span
+    >
+    <span
+      class="md:col-start-4 text-base leading-6 text-gray-700 text-right p-3"
+      >{{ order?.['transport-fee']| currency: "VND":true }}</span
+    >
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 border-b border-gray-300">
+    <span
+      class="md:col-start-3 text-base leading-6 text-gray-700 text-right border-r border-gray-300 p-3"
+      >Giảm giá phí vận chuyển</span
+    >
+    <span
+      class="md:col-start-4 text-base leading-6 text-gray-700 text-right p-3"
+      >-{{ order?.['discount']| currency: "VND":true }}</span
+    >
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 border-b border-gray-300">
+    <span
+      class="md:col-start-3 text-base leading-6 text-gray-700 text-right border-r border-gray-300 p-3"
+      >Voucher</span
+    >
+    <span
+      class="md:col-start-4 text-base leading-6 text-gray-700 text-right p-3"
+      >-{{ order?.['voucher']| currency: "VND":true }}</span
+    >
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 border-b border-gray-300">
+    <span
+      class="md:col-start-3 text-base leading-6 text-gray-700 text-right border-r border-gray-300 p-3"
+      >Tổng số tiền</span
+    >
+    <span
+      class="md:col-start-4 text-2xl leading-7 font-bold text-[#ee4d48] text-right p-3"
+      >{{ ((order?.total ||0)+ (order?.['transport-fee']||0)-  (order?.['discount']||0)- (order?.['voucher']||0))| currency: "VND":true }}</span
+    >
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 border-b border-gray-300">
+    <span
+      class="md:col-start-3 text-base leading-6 text-gray-700 text-right border-r border-gray-300 p-3"
+      >Phương thức thanh toán</span
+    >
+    <span
+      class="md:col-start-4 text-base leading-6 text-gray-700 text-right p-3"
+      >{{ order?.['payment-method'] || 'COD' | transformPayment}}</span
+    >
+  </div>
+  <app-dialog
+    [displayDialog]="displayDialog"
+    (newItemEvent)="closeDialog($event)"
+  ></app-dialog>
+  <app-box-chat
+    [displayBoxChat]="displayBoxChat"
+    (newItemEvent)="closeBoxChat($event)"
+  ></app-box-chat>
+</section>
