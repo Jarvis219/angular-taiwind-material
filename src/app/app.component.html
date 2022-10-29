@@ -1,3 +1,26 @@
 <div class="container mx-auto">
+  <div class="flex justify-center items-center py-4">
+    <a [routerLink]="['/order/1']">
+      <button
+        class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center"
+      >
+        Screen 1
+      </button>
+    </a>
+    <a [routerLink]="['/order/2']">
+      <button
+        class="text-white mx-2 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center"
+      >
+        Screen 2
+      </button>
+    </a>
+    <a [routerLink]="['/order/3']">
+      <button
+        class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center"
+      >
+        Screen 3
+      </button>
+    </a>
+  </div>
   <router-outlet></router-outlet>
 </div>
