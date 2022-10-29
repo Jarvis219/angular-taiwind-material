@@ -76,7 +76,12 @@
       Chat nhanh
     </button>
     <button
-      class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center"
+      class="{{
+        (titleButton.includes('Hủy')
+          ? 'bg-gradient-to-r from-red-400 via-red-500 to-red-600'
+          : 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600') +
+          ' text-white hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 px-4 text-center'
+      }}"
     >
       {{ titleButton }}
     </button>
