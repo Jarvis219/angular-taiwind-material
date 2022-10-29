@@ -1,9 +1,9 @@
-<section class="lg:mx-28 bg-gray-50 shadow p-4">
-  <div class="flex justify-between">
-    <h2 class="font-semibold text-slate-900">Địa chỉ nhận hàng</h2>
+<section class="bg-white shadow px-4 pt-4">
+  <div class="flex justify-between items-center border-b border-gray-300">
+    <h2 class="font-semibold text-slate-900 !mb-0">Địa chỉ nhận hàng</h2>
     <span class="uppercase">ID Đơn hàng: {{order?.['code-orderDetail']}}</span>
   </div>
-  <div class="grid md:grid-cols-3 font-mono">
+  <div class="grid md:grid-cols-3 font-mono mt-6">
     <div class="col-span-1 mb-4 md:mr-5 md:mb-0">
       <div class="flex flex-col">
         <span
@@ -93,7 +93,7 @@
     <img
       [src]="item.image"
       [alt]="item.name"
-      class="flex-none rounded-md bg-slate-100 h-16 w-16 md:w-32 md:h-32 object-cover"
+      class="flex-none rounded-md bg-slate-100 h-16 w-16 md:w-32 md:h-32 object-cover hover:opacity-80"
     />
     <div class="relative min-w-0 flex-auto">
       <div class="flex items-center justify-between">
@@ -177,7 +177,7 @@
       >{{ ((order?.total ||0)+ (order?.['transport-fee']||0)-  (order?.['discount']||0)- (order?.['voucher']||0))| currency: "VND":true }}</span
     >
   </div>
-  <div class="grid grid-cols-2 md:grid-cols-4 border-b border-gray-300">
+  <div class="grid grid-cols-2 md:grid-cols-4">
     <span
       class="md:col-start-3 text-base leading-6 text-gray-700 text-right border-r border-gray-300 p-3"
       >Phương thức thanh toán</span
