@@ -1,0 +1,159 @@
+{
+  "orderDetail": [
+    {
+      "id": 1,
+      "code-orderDetail": "OD001",
+      "customer-name": "James Adam",
+      "customer-phone": "0368582435",
+      "customer-address": "Toà Nhà Iph, Đường Cầu Giấy, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội",
+      "notes": "Giao hàng vào buổi tối",
+      "weekend-delivery": true,
+      "status-detail": [
+        {
+          "status": "vote",
+          "date": "2019-01-05",
+          "message": "Đánh giá"
+        },
+        {
+          "status": "completed",
+          "date": "2019-01-04",
+          "message": "Đã nhận hàng"
+        },
+        {
+          "status": "shipping",
+          "date": "2019-01-02",
+          "message": "Đã giao cho ĐVVC"
+        },
+        {
+          "status": "confirmed",
+          "date": "2019-01-02",
+          "message": "Đã xác nhận"
+        },
+        { "status": "pay", "date": "2019-02-01", "message": "Đã thanh toán" },
+        {
+          "status": "pending",
+          "date": "2019-01-01 ",
+          "message": "Đơn hàng đã đặt"
+        }
+      ],
+      "products": [
+        {
+          "id": 1,
+          "name": "Kem dưỡng ẩm Vichy",
+          "price": 100000,
+          "quantity": 1,
+          "category": "Kem dưỡng ẩm",
+          "image": "https://firebasestorage.googleapis.com/v0/b/datn-spa.appspot.com/o/images%2FKDAVichy3.jpeg?alt=media&amp;token=ad522c86-7553-4d24-8cb7-72f137131b4a"
+        },
+        {
+          "id": 2,
+          "name": "Kem dưỡng ẩm Senka",
+          "price": 200000,
+          "category": "Kem dưỡng ẩm",
+          "quantity": 2,
+          "image": "https://firebasestorage.googleapis.com/v0/b/datn-spa.appspot.com/o/images%2FKDASenka1.jpeg?alt=media&amp;token=a7032daa-4d0c-4d8b-af0a-dfd9b01567c9"
+        }
+      ],
+      "total": 500000,
+      "transport-fee": 30000,
+      "voucher": 10000,
+      "payment-method": "COD",
+      "discount": 5000
+    },
+    {
+      "id": 2,
+      "code-orderDetail": "OD002",
+      "customer-name": "James Adam",
+      "customer-phone": "0368582435",
+      "customer-address": "Toà Nhà Iph, Đường Cầu Giấy, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội",
+      "notes": "Giao hàng vào buổi tối",
+      "weekend-delivery": true,
+      "status-detail": [
+        {
+          "status": "completed",
+          "date": "2019-01-04",
+          "message": "Đã nhận hàng"
+        },
+        {
+          "status": "shipping",
+          "date": "2019-01-02",
+          "message": "Đã giao cho ĐVVC"
+        },
+        {
+          "status": "confirmed",
+          "date": "2019-01-02",
+          "message": "Đã xác nhận"
+        },
+        { "status": "pay", "date": "2019-02-01", "message": "Đã thanh toán" },
+        {
+          "status": "pending",
+          "date": "2019-01-01 ",
+          "message": "Đơn hàng đã đặt"
+        }
+      ],
+      "products": [
+        {
+          "id": 1,
+          "name": "Kem dưỡng ẩm Vichy",
+          "price": 100000,
+          "quantity": 1,
+          "category": "Kem dưỡng ẩm",
+          "image": "https://firebasestorage.googleapis.com/v0/b/datn-spa.appspot.com/o/images%2FKDAVichy3.jpeg?alt=media&amp;token=ad522c86-7553-4d24-8cb7-72f137131b4a"
+        },
+        {
+          "id": 2,
+          "name": "Kem dưỡng ẩm Senka",
+          "price": 200000,
+          "category": "Kem dưỡng ẩm",
+          "quantity": 2,
+          "image": "https://firebasestorage.googleapis.com/v0/b/datn-spa.appspot.com/o/images%2FKDASenka1.jpeg?alt=media&amp;token=a7032daa-4d0c-4d8b-af0a-dfd9b01567c9"
+        }
+      ],
+      "total": 500000,
+      "transport-fee": 30000,
+      "voucher": 10000,
+      "payment-method": "COD",
+      "discount": 5000
+    },
+    {
+      "id": 3,
+      "code-orderDetail": "OD003",
+      "customer-name": "James Adam",
+      "customer-phone": "0368582435",
+      "customer-address": "Toà Nhà Iph, Đường Cầu Giấy, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội",
+      "notes": "Giao hàng vào buổi tối",
+      "weekend-delivery": true,
+      "status-detail": [
+        { "status": "pay", "date": "2019-02-01", "message": "Đã thanh toán" },
+        {
+          "status": "pending",
+          "date": "2019-01-01 ",
+          "message": "Đơn hàng đã đặt"
+        }
+      ],
+      "products": [
+        {
+          "id": 1,
+          "name": "Kem dưỡng ẩm Vichy",
+          "price": 100000,
+          "quantity": 1,
+          "category": "Kem dưỡng ẩm",
+          "image": "https://firebasestorage.googleapis.com/v0/b/datn-spa.appspot.com/o/images%2FKDAVichy3.jpeg?alt=media&amp;token=ad522c86-7553-4d24-8cb7-72f137131b4a"
+        },
+        {
+          "id": 2,
+          "name": "Kem dưỡng ẩm Senka",
+          "price": 200000,
+          "category": "Kem dưỡng ẩm",
+          "quantity": 2,
+          "image": "https://firebasestorage.googleapis.com/v0/b/datn-spa.appspot.com/o/images%2FKDASenka1.jpeg?alt=media&amp;token=a7032daa-4d0c-4d8b-af0a-dfd9b01567c9"
+        }
+      ],
+      "total": 500000,
+      "transport-fee": 30000,
+      "voucher": 10000,
+      "payment-method": "COD",
+      "discount": 5000
+    }
+  ]
+}
