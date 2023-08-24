@@ -5,8 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
 import { OrderComponent } from './screen/components/order/order.component';
 import { TransformDatePipe } from './pipe/transform-date.pipe';
 
